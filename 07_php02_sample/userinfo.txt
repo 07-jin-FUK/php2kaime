@@ -1,0 +1,3 @@
+"ootoya@gmail.com","$2y$10$ZVreb8IMsDiPVPx/Pv9YRudPpMi9o1KEjAfi8/1/tQdr/mCF4ZKN."
+"j.yamamoto9231@gmail.com","$2y$10$1YfzevSLvnamhLOlrKlG/.iL0HHTXsyog6kHSynwX3oBMyp7PnG06"
+"jin@example.com","$2y$10$JGy62jGHwnhhJb5ctFDUB.0nfvfHhYmDfwYniMv/fsZh9.WWCgk.K"
