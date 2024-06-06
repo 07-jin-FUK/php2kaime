@@ -3,6 +3,8 @@
 
 
 session_start();
+include('functions.php');
+$pdo = connect_to_db();
 
 // var_dump($_SESSION);
 // exit();
@@ -229,13 +231,25 @@ $username = isset($_SESSION['name']) ? $_SESSION['name'] : 'ゲスト';
       -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
       transform: translateX(-9%) translateY(-25%) rotate(45deg);
     }
+
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      z-index: 1000;
+    }
   </style>
 </head>
 
 <body>
   <!--Hey! This is the original version
 of Simple CSS Waves-->
-  <audio id="audio" src="./Img/寝落ち.mp3" preload="auto" loop></audio>
+  <audio id="audio" src="./Img/Someday.mp3" preload="auto" loop></audio>
   <div class="header">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container">
@@ -277,13 +291,11 @@ of Simple CSS Waves-->
       <svg version="1.1" class="logo" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500" xml:space="preserve">
         <path fill="#FFFFFF" stroke="#000000" stroke-width="10" stroke-miterlimit="10" d="M57,283" />
       </svg>
-      <form action="todo_create.php" method="POST">
+      <form action="todo_create.php" method="POST" enctype="multipart/form-data">
         <div class="container" id="tyuuou">
           <fieldset>
-            <div>
-              <legend>今日も1日お疲れさまでした!<br>楽しめましたか？？</legend>
-              <a href="todo_read.php"></a>
-            </div>
+            <legend>今日も1日お疲れさまでした!<br>楽しめましたか？？</legend>
+
             <div class="anke">
               <input type="text" name="name" id="nameInput" placeholder="お名前は？">
             </div>
@@ -319,17 +331,25 @@ of Simple CSS Waves-->
               <input type="text" name="doko" placeholder="一言（コメント）">
 
             </div>
-
+            <div class="anke">
+              <label>動画アップロード</label>
+              <input type="file" name="upfile">
+              <br>
+              ※動画はmp4方式のみ対応しています。<br>
+              <!-- <input type="submit" value="アップロード"> -->
+            </div>
 
 
             <div>
-              <button class=" btn btn-flat">思い出を追加！</button>
+              <button class=" btn btn-flat" onclick="handleSubmit()">思い出を追加！</button>
             </div>
 
 
           </fieldset>
         </div>
       </form>
+
+
     </div>
 
     <!--Waves Container-->
@@ -353,7 +373,7 @@ of Simple CSS Waves-->
 
   <!--Content starts-->
   <div class="content flex">
-    <p>By.Jinmaru | Anyohaseyo </p>
+    <p>By.Jinmaru | Anyonhaseyo </p>
   </div>
   <!--Content ends-->
 
@@ -366,7 +386,7 @@ of Simple CSS Waves-->
     document.addEventListener('DOMContentLoaded', (event) => {
       const music = document.getElementById('audio');
       // 音量を小さく設定（0.0から1.0の範囲で設定）
-      music.volume = 0.3;
+      music.volume = 0.2;
 
       // ページロード時に音楽を再生
       music.play();
@@ -376,7 +396,36 @@ of Simple CSS Waves-->
         music.play();
       });
     });
+
+    // // フォームが送信されたときの処理
+    // document.querySelector("form").addEventListener("submit", function(event) {
+    //   // デフォルトの動作をキャンセル
+    //   // event.preventDefault();
+
+    //   // ポップアップを表示
+    //   showPopup();
+
+    //   // 3秒後にページをリロード
+    //   setTimeout(function() {
+    //     location.reload();
+    //   }, 3000);
+    // });
+
+    // // ポップアップを表示する関数
+    // function showPopup() {
+    //   // ポップアップメッセージを作成
+    //   var popupMessage = "投稿完了しました！投稿履歴を確認しましょう！";
+
+    //   // ポップアップ要素を作成
+    //   var popup = document.createElement("div");
+    //   popup.classList.add("popup");
+    //   popup.textContent = popupMessage;
+
+    //   // ポップアップをページに追加
+    //   document.body.appendChild(popup);
+    // }
   </script>
+
 </body>
 
 </html>

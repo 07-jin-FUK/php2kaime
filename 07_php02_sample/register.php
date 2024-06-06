@@ -110,7 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <form action="./register.php" method="POST">
                 <!-- 処理を行う宛先を指定 -->
-                <P>新規会員登録</P>
+                <P style="margin-left:35%;font-size:20px ">新規会員登録</P>
                 <div>
                     <label>
                         名前：

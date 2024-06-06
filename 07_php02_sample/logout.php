@@ -18,7 +18,7 @@ $_SESSION = array(); //セッションの中身をすべて削除
 <body>
     <div class="container">
         <div class="mx-auto" style="width:400px;">
-            <p>ログアウトしました。</p>
+            <p>ログアウトしました。次に会う日を楽しみにしています！</p>
             <a href="login.php">ログインへ</a>
         </div>
     </div>

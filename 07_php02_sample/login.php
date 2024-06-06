@@ -108,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <input type="text" name="name" class="form-control" style="width:400px" required><br>
                     </label>
                 </div> -->
-                <P>ログイン</P><br>
+                <P style="margin-left:40%;font-size:20px ">ログイン</P><br>
                 <div>
                     <label>
                         メールアドレス：
